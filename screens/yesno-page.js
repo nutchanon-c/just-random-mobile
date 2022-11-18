@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import RandomButton from "../components/random-button";
 import SmallContainer from "../components/small-container";
 import api from "../utils/api";
+import { capitalizeFirstLetter } from "../utils/util-functions";
 
 const YesNoPage = () => {
   const [result, setResult] = useState();
@@ -20,7 +21,13 @@ const YesNoPage = () => {
     <SmallContainer
       child={
         <View>
-          <Text>{isLoading ? "Loading..." : result ?? "No result"}</Text>
+          <Text>
+            {isLoading
+              ? "Loading..."
+              : result
+              ? capitalizeFirstLetter(result)
+              : "No result"}
+          </Text>
           <RandomButton onPress={sendRequest} />
         </View>
       }
