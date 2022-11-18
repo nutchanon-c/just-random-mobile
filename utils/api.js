@@ -18,6 +18,9 @@ export default function (type, body) {
         let json = JSON.parse(text);
         // console.log(json);
         return json;
+      })
+      .catch((e) => {
+        return null;
       });
   }
   return fetch(`${url}/${type}`, { mode: "cors" })
