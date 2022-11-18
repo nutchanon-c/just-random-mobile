@@ -40,9 +40,11 @@ const ListPage = () => {
   };
 
   const handleAddData = () => {
-    let tmp = [...list];
-    tmp.push(inputValue);
-    setList(tmp);
+    if (!list.includes(inputValue)) {
+      let tmp = [...list];
+      tmp.push(inputValue);
+      setList(tmp);
+    }
     setInputValue("");
   };
 
@@ -66,6 +68,7 @@ const ListPage = () => {
               style={styles.inputField}
               keyboardType="default"
               onChangeText={handleInputChange}
+              value={inputValue}
             />
             <Button title="Add" onPress={handleAddData} />
           </View>
