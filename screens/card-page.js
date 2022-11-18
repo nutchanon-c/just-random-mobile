@@ -6,18 +6,23 @@ import api from "../utils/api";
 
 const CardPage = () => {
   const [result, setResult] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const sendRequest = () => {
+    setIsLoading(true);
     api("card").then((res) => {
       if (res.result) {
         setResult(res.result);
       }
+      setIsLoading(false);
     });
   };
   return (
     <SmallContainer
       child={
         <View>
-          {result ? (
+          {isLoading ? (
+            <Text>Loading...</Text>
+          ) : result ? (
             <View>
               <Text>{`${result.cardValue} of ${result.suite}`}</Text>
               <Text>{`card value: ${result.cardValue}`}</Text>

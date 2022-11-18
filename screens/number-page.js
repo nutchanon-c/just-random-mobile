@@ -8,6 +8,7 @@ const NumberPage = () => {
   const [result, setResult] = useState(null);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(100);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     console.log(`result: ${result}`);
@@ -32,8 +33,10 @@ const NumberPage = () => {
   });
 
   const sendRequest = () => {
+    setIsLoading(true);
     api("number", { min: min, max: max }).then((res) => {
       setResult(res.result);
+      setIsLoading(false);
     });
   };
 
@@ -58,7 +61,7 @@ const NumberPage = () => {
     <SmallContainer
       child={
         <View style={styles.container}>
-          <Text>{result}</Text>
+          <Text>{isLoading ? "Loading..." : result ?? "No result"}</Text>
           <Text>Range</Text>
           <View style={styles.rowContainer}>
             <Text>From</Text>

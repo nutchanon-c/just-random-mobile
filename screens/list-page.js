@@ -15,6 +15,7 @@ const ListPage = () => {
   const [list, setList] = useState([]);
   const [result, setResult] = useState();
   const [inputValue, setInputValue] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const styles = StyleSheet.create({
     inputField: {
       width: 200,
@@ -28,10 +29,12 @@ const ListPage = () => {
   });
 
   const sendRequest = () => {
+    setIsLoading(true);
     api("list", { list: list }).then((res) => {
       if (res.result) {
         setResult(res.result);
       }
+      setIsLoading(false);
     });
   };
 
@@ -52,7 +55,7 @@ const ListPage = () => {
     <SmallContainer
       child={
         <View>
-          <Text>{`Result: ${result ?? ""}`}</Text>
+          <Text>{isLoading ? "Loading..." : `Result: ${result ?? ""}`}</Text>
           {list.length > 0 ? (
             <FlatList
               data={list}

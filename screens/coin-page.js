@@ -6,12 +6,14 @@ import api from "../utils/api";
 
 const CoinPage = () => {
   const [result, setResult] = useState();
-
+  const [isLoading, setIsLoading] = useState(false);
   const sendRequest = () => {
+    setIsLoading(true);
     api("coin").then((res) => {
       if (res.result) {
         setResult(res.result);
       }
+      setIsLoading(false);
     });
   };
 
@@ -19,7 +21,7 @@ const CoinPage = () => {
     <SmallContainer
       child={
         <View>
-          <Text>{result ?? "No result"}</Text>
+          <Text>{isLoading ? "Loading..." : result ?? "No result"}</Text>
           <RandomButton onPress={sendRequest} />
         </View>
       }
