@@ -23,12 +23,43 @@ const NumberPage = () => {
       flexDirection: "row",
       justifyContent: "center",
       alignItems: "center",
+      marginBottom: 20,
     },
 
     textInput: {
-      backgroundColor: "lightblue",
-      width: 30,
-      height: 50,
+      backgroundColor: "white",
+      width: 50,
+      height: 35,
+      marginRight: 10,
+      marginLeft: 10,
+      borderRadius: 5,
+    },
+
+    container2: {
+      backgroundColor: "#ffffff",
+      height: 350,
+      width: 350,
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: 5,
+      marginBottom: 20,
+    },
+
+    textInput0: {
+      marginBottom: 10,
+    },
+
+    textInput01: {
+      fontSize: 25,
+      fontWeight: "bold",
+    },
+
+    textInput02: {
+      fontSize: 20,
+    },
+
+    textInput03: {
+      fontSize: 70,
     },
   });
 
@@ -61,22 +92,31 @@ const NumberPage = () => {
     <SmallContainer
       child={
         <View style={styles.container}>
-          <Text>{isLoading ? "Loading..." : result ?? "No result"}</Text>
-          <Text>Range</Text>
+          <View style={styles.container2}>
+            <Text style={styles.textInput03}>
+              {isLoading ? "Loading" : result ?? "No result"}
+            </Text>
+          </View>
+
+          <View style={styles.textInput0}>
+            <Text style={styles.textInput01}>Range</Text>
+          </View>
+
           <View style={styles.rowContainer}>
-            <Text>From</Text>
+            <Text style={styles.textInput02}>From</Text>
             <TextInput
               style={styles.textInput}
               keyboardType="number-pad"
               onChangeText={handleMinChange}
             />
-            <Text>To</Text>
+            <Text style={styles.textInput02}>To</Text>
             <TextInput
               style={styles.textInput}
               keyboardType="number-pad"
               onChangeText={handleMaxChange}
             />
           </View>
+
           <RandomButton onPress={sendRequest} />
         </View>
       }
