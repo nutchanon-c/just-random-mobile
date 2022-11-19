@@ -7,6 +7,7 @@ const MainContainer = (props) => {
   const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
+      backgroundColor: "orange",
     },
     title: {
       alignSelf: "center",
@@ -20,6 +21,7 @@ const MainContainer = (props) => {
   });
   return (
     <SafeAreaView style={styles.mainContainer}>
+      <Text></Text>
       <Text style={styles.title}>JUST</Text>
       <Text style={styles.title}>RANDOM</Text>
 

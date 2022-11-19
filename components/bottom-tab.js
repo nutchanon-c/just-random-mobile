@@ -1,7 +1,9 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "react-native-vector-icons/FontAwesome5";
+// import Icon6 from "react-native-vector-icons/FontAwesome6";
+import Icon5 from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/FontAwesome";
 import CoinPage from "../screens/coin-page";
 import DicePage from "../screens/dice-page";
 import CardPage from "../screens/card-page";
@@ -13,7 +15,7 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () => {
   const headerTintColor = "black";
   return (
-    <Tab.Navigator>
+    <Tab.Navigator style={styles.tabStyle}>
       <Tab.Screen
         name="Dice"
         component={DicePage}
@@ -25,9 +27,9 @@ const BottomTab = () => {
           tabBarIcon: ({ focused, color, size }) => {
             // You can return any component that you like here!
             return (
-              <Icon
-                name="map"
-                color={focused ? "#9fe2bf" : "grey"}
+              <Icon5
+                name="dice"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -35,6 +37,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
       <Tab.Screen
@@ -47,9 +51,9 @@ const BottomTab = () => {
           tabBarIcon: ({ focused, color, size }) => {
             // You can return any component that you like here!
             return (
-              <Icon
-                name="city"
-                color={focused ? "#9fe2bf" : "grey"}
+              <Icon5
+                name="bitcoin"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -57,6 +61,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
       <Tab.Screen
@@ -70,9 +76,9 @@ const BottomTab = () => {
           tabBarIcon: ({ focused, color, size }) => {
             // You can return any component that you like here!
             return (
-              <Icon
-                name="map"
-                color={focused ? "#9fe2bf" : "grey"}
+              <Icon5
+                name="heart"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -80,6 +86,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
       <Tab.Screen
@@ -94,8 +102,8 @@ const BottomTab = () => {
             // You can return any component that you like here!
             return (
               <Icon
-                name="map"
-                color={focused ? "#9fe2bf" : "grey"}
+                name="sort-numeric-asc"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -103,6 +111,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
       <Tab.Screen
@@ -117,8 +127,8 @@ const BottomTab = () => {
             // You can return any component that you like here!
             return (
               <Icon
-                name="map"
-                color={focused ? "#9fe2bf" : "grey"}
+                name="list"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -126,6 +136,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
       <Tab.Screen
@@ -140,8 +152,8 @@ const BottomTab = () => {
             // You can return any component that you like here!
             return (
               <Icon
-                name="map"
-                color={focused ? "#9fe2bf" : "grey"}
+                name="check"
+                color={focused ? "black" : "grey"}
                 size={size}
               />
             );
@@ -149,6 +161,8 @@ const BottomTab = () => {
           tabBarLabel: ({ focused, color, size }) => {
             return <></>;
           },
+          tabBarActiveBackgroundColor: "white",
+          tabBarInactiveBackgroundColor: "black",
         }}
       />
     </Tab.Navigator>
@@ -159,7 +173,10 @@ export default BottomTab;
 
 const styles = StyleSheet.create({
   headerStyle: {
-    backgroundColor: "white",
+    backgroundColor: "orange",
     height: 80,
+  },
+  tabStyle: {
+    backgroundColor: "orange",
   },
 });

@@ -7,7 +7,7 @@ import MainContainer from "./components/main-container";
 export default function App() {
   return (
     <NavigationContainer>
-      <MainContainer child={<BottomTab />} />
+      <MainContainer child={<BottomTab styles={styles.tabStyle} />} />
     </NavigationContainer>
   );
 }
@@ -18,5 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  tabStyle: {
+    backgroundColor: "black",
   },
 });

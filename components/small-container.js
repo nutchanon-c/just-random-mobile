@@ -5,7 +5,7 @@ const SmallContainer = (props) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-    //   backgroundColor: "red",
+      backgroundColor: "orange",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
