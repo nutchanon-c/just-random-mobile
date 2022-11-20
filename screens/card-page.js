@@ -25,10 +25,10 @@ const CardPage = () => {
             cardPath += `H`;
             break;
           case 3:
-            cardPath += `C`;
+            cardPath += `D`;
             break;
           case 4:
-            cardPath += `D`;
+            cardPath += `C`;
             break;
         }
         console.log(res.result.randomNumber);
