@@ -33,7 +33,7 @@ const CoinPage = () => {
         <View style={styles.large_container}>
           <View style={styles.container}>
             <Text style={styles.text_style}>
-              {isLoading ? "Loading..." : capitalizeFirstLetter(result) ?? "no result"}
+              {isLoading ? "Loading..." : result ? capitalizeFirstLetter(result) : "no result"}
             </Text>
             <Image style={styles.image} source={path} />
           </View>
