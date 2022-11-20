@@ -3,6 +3,7 @@ import { Button, View, Text, StyleSheet, Image } from "react-native";
 import RandomButton from "../components/random-button";
 import SmallContainer from "../components/small-container";
 import api from "../utils/api";
+import { capitalizeFirstLetter } from "../utils/util-functions";
 
 const CoinPage = () => {
   const [result, setResult] = useState();
@@ -32,7 +33,7 @@ const CoinPage = () => {
         <View style={styles.large_container}>
           <View style={styles.container}>
             <Text style={styles.text_style}>
-              {isLoading ? "Loading..." : result ?? "no result"}
+              {isLoading ? "Loading..." : capitalizeFirstLetter(result) ?? "no result"}
             </Text>
             <Image style={styles.image} source={path} />
           </View>
