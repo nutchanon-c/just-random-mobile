@@ -21,7 +21,6 @@ const MainContainer = (props) => {
   });
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <Text></Text>
       <Text style={styles.title}>JUST</Text>
       <Text style={styles.title}>RANDOM</Text>
 
