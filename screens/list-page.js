@@ -16,38 +16,6 @@ const ListPage = () => {
   const [result, setResult] = useState();
   const [inputValue, setInputValue] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const styles = StyleSheet.create({
-    inputField: {
-      width: 200,
-      height: 60,
-      backgroundColor: "lightgray",
-      margin: 10,
-      padding: 10,
-    },
-    inputRow: {
-      display: "flex",
-      flexDirection: "row",
-    },
-    large_container: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    container: {
-      backgroundColor: "#ffffff",
-      height: 300,
-      width: 350,
-      // alignItems: "center",
-      // justifyContent: "center",
-      padding: 20,
-      borderRadius: 5,
-      marginBottom: 50,
-    },
-    resultStyle: {
-      fontSize: 20,
-      marginBottom: 5,
-    },
-  });
 
   const sendRequest = () => {
     setIsLoading(true);
@@ -114,4 +82,36 @@ const ListPage = () => {
   );
 };
 
+const styles = StyleSheet.create({
+  inputField: {
+    width: 200,
+    height: 60,
+    backgroundColor: "lightgray",
+    margin: 10,
+    padding: 10,
+  },
+  inputRow: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  large_container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  container: {
+    backgroundColor: "#ffffff",
+    height: 300,
+    width: 350,
+    // alignItems: "center",
+    // justifyContent: "center",
+    padding: 20,
+    borderRadius: 5,
+    marginBottom: 50,
+  },
+  resultStyle: {
+    fontSize: 20,
+    marginBottom: 5,
+  },
+});
 export default ListPage;
