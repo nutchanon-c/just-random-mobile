@@ -31,9 +31,6 @@ const YesNoPage = () => {
       child={
         <View style={styles.large_container}>
           <View style={styles.container}>
-            {/* <Text style={styles.text_style}>
-              {isLoading ? "Loading..." : result ?? "no result"}
-            </Text> */}
             <Image style={styles.image} source={path} />
           </View>
 

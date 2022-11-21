@@ -49,10 +49,6 @@ const CardPage = () => {
             ) : result ? (
               <View>
                 <Text>{`${result.cardValue} of ${result.suite}`}</Text>
-                {/* <Text>{`card value: ${result.cardValue}`}</Text>
-                <Text>{`suite: ${result.suite}`}</Text>
-                <Text>{`random number: ${result.randomNumber}`}</Text>
-                <Text>{`suite number: ${result.suiteNumber}`}</Text> */}
               </View>
             ) : (
               <Text>No result</Text>
